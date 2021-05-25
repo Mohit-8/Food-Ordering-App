@@ -49,6 +49,12 @@ const Checkout = (props) => {
     }
 
     // Submit cart data
+    props.onConfirm({
+      name: enteredName,
+      street: enteredStreet,
+      city: enteredCity,
+      postal: enteredPostalCode,
+    });
   };
 
   const nameControlClasses = `${classes.control} ${
@@ -90,6 +96,7 @@ const Checkout = (props) => {
       </div>
       <div className={classes.actions}>
         <button type="button" onClick={props.onCancel}>
+          {/*type=button so that it doesn't submit the form */}
           Cancel
         </button>
         <button className={classes.submit}>Confirm</button>
